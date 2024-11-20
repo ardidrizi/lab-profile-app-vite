@@ -1,21 +1,22 @@
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const HomePage = () => {
-  const history = useHistory();
-  console.log(history);
-
-  const handleSignUp = () => {
-    history.push('/signup');
-  };
-
-  const handleLogIn = () => {
-    history.push('/login');
-  };
+  const navigate = useNavigate();
 
   return (
     <div>
-      <button onClick={handleSignUp}>Sign Up</button>
-      <button onClick={handleLogIn}>Log In</button>
+      <button
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        onClick={() => navigate('/signup')}
+      >
+        Sign Up
+      </button>
+      <button
+        className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+        onClick={() => navigate('/login')}
+      >
+        Log In
+      </button>
     </div>
   );
 };
